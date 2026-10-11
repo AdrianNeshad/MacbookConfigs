@@ -1,56 +1,21 @@
 # MacOS Configurations
 
-| File | Description | Usage |
-|---|---|---|
-| `com.local.KeyRemapping.plist` | Remaps two keyboard keys to decrease and increase keyboard backlight brightness using `hidutil`. | Copy to `~/Library/LaunchAgents/` and load with `launchctl`. Automatically applies at login. |
-| `dock-settings.sh` | Configures the Dock's auto-hide delay using macOS `defaults`. Includes comments explaining available values and how to revert the changes. | Run `chmod +x dock-settings.sh` followed by `./dock-settings.sh` in Terminal. |
+A collection of scripts and configuration files for customizing macOS, including keyboard remapping, Dock behavior, Finder settings, and other system tweaks.
+
+## Configurations
+
+| File | Description |
+|---|---|
+| `com.local.KeyRemapping.plist` | Remaps keyboard keys to control keyboard backlight brightness. |
+| `dock-settings.sh` | Adjusts the Dock's auto-hide delay. |
+| `show-extensions.sh` | Shows all file extensions in Finder. |
+| `show-hidden-files.sh` | Shows hidden files and folders in Finder. |
+| `show-path-bar.sh` | Displays the full folder path in Finder windows. |
 
 ## Usage
 
-### Keyboard Remapping
-
-Copy the plist file to your LaunchAgents directory:
-
-```bash
-cp com.local.KeyRemapping.plist ~/Library/LaunchAgents/
-```
-
-Load the configuration:
-
-```bash
-launchctl load ~/Library/LaunchAgents/com.local.KeyRemapping.plist
-```
-
-The key remapping will be active and configured to load at login.
-
-To disable it:
-
-```bash
-launchctl unload ~/Library/LaunchAgents/com.local.KeyRemapping.plist
-```
-
-### Dock Settings
-
-Make the script executable:
-
-```bash
-chmod +x dock-settings.sh
-```
-
-Run it:
-
-```bash
-./dock-settings.sh
-```
-
-The script changes the Dock's auto-hide delay and restarts the Dock to apply the change.
-
-To restore the default macOS setting, uncomment the reset commands at the end of the script and run it again:
-
-```bash
-defaults delete com.apple.dock autohide-delay
-killall Dock
-```
+- **Shell scripts (`.sh`):** Run using `bash filename.sh` or make executable with `chmod +x`.
+- **LaunchAgents (`.plist`):** Install in `~/Library/LaunchAgents/` and load using `launchctl`.
 
 ## Notes
 
