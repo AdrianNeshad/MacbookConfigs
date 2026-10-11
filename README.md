@@ -10,7 +10,7 @@ A collection of scripts and configuration files for customizing macOS, including
 | `dock-settings.sh` | Adjusts the Dock's auto-hide delay. |
 | `show-extensions.sh` | Shows all file extensions in Finder. |
 | `show-hidden-files.sh` | Shows hidden files and folders in Finder. |
-| `show-path-bar.sh` | Displays the full folder path in Finder windows. |
+| `show-filepath-finder.sh` | Displays the full folder path in Finder windows. |
 
 ## Usage
 
